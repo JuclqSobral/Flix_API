@@ -5,19 +5,18 @@ from genres.models import Genre
 from genres.serializers import GenreSerializer
 
 
-
 class GenreCreateListView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated, GlobalDefaultPermission,)
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
 
+
 class GernreRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, GlobalDefaultPermission,)
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
-    
-    
-    
+
+
 """PI
 @csrf_exempt
 def genre_create_list_view(request):
@@ -35,7 +34,6 @@ def genre_create_list_view(request):
             status=201,
         )
 """
-
 
 
 """
